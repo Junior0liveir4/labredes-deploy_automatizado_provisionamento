@@ -14,7 +14,7 @@ A solução aqui documentada corresponde às atribuições do **Deploy Automatiz
 
 ![Topologia da Plataforma](images/topologia.png)
 
-A infraestrutura do laboratório é composta por múltiplas máquinas virtuais (VMs) com propósitos específicos, interligadas por switches virtuais (Open vSwitch) que segmentam o tráfego em múltiplas VLANs (Virtual LANs). 
+A infraestrutura deste projeto é composta por múltiplas máquinas virtuais (VMs) com propósitos específicos, interligadas por switches virtuais (Open vSwitch) que segmentam o tráfego em múltiplas VLANs (Virtual LANs). 
 
 A arquitetura exige que o provisionamento de hardware virtual e a instalação de softwares ocorram de forma padronizada e reproduzível. Para atingir este objetivo, o projeto adota uma abordagem de provisionamento declarativo e configuração imperativa centralizada.
 
@@ -82,3 +82,14 @@ Para garantir o isolamento de responsabilidades, o repositório é segmentado em
 | **Terraform (v1.50+)** | Ferramenta de orquestração de infraestrutura. Lê os arquivos `.tf` e envia requisições estruturadas para o OpenStack instanciar a topologia desejada. |
 | **Ansible** | Ferramenta de automação sem agente (agentless). Utiliza o inventário gerado pelo Terraform para conectar via protocolo SSH nas VMs e aplicar o estado desejado nos sistemas operacionais. |
 | **Netplan / IP Route** | Ferramentas nativas do kernel Linux utilizadas via Ansible para estruturação de rotas de tráfego de produção em direção à máquina VM11. |
+
+---
+
+## Trilha de Reprodução do Ambiente (Guia de Leitura)
+
+Para compreender o processo de construção e poder reproduzir este laboratório, a documentação foi segmentada em arquivos específicos. Recomenda-se seguir a ordem de leitura abaixo:
+
+1. **Este Documento (`README.md` principal):** Compreensão da arquitetura, do roteamento e das ferramentas utilizadas.
+2. **Configuração da VM Orquestradora (`VM10_SETUP.md`):** Documento detalhando os comandos de terminal para preparação do sistema operacional Ubuntu, configuração estática de rede via Netplan e a instalação dos binários das dependências do projeto (Ansible, Terraform, OpenStack Client e Docker).
+3. **Provisionamento de Infraestrutura (`terraform/README.md`):** Explicação da estrutura declarativa dos arquivos `.tf`. Detalha como as chaves SSH são registradas, como o arquivo de variáveis mapeia as redes e como a criação de uma máquina virtual de teste é executada contra a API do OpenStack.
+4. **Gerenciamento de Configuração (`ansible/README.md`):** Demonstração do uso do inventário dinâmico gerado pelo Terraform e a execução do primeiro teste conjunto: o envio de uma *Playbook* (`instalar_ovs.yml`) para realizar conexões remotas via SSH e instalar os pacotes do Open vSwitch nas instâncias provisionadas.
