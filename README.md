@@ -1,5 +1,6 @@
-👨‍💻 # Plataforma Distribuída de Monitoramento e Segurança de Redes
-🚀 **Módulo de Orquestração e Deploy Automatizado (VM10)**
+# 👨‍💻 Plataforma Distribuída de Monitoramento e Segurança de Redes
+
+** 🚀Módulo de Orquestração e Deploy Automatizado (VM10)**
 
 ![Ansible](https://img.shields.io/badge/Ansible-Automacao-red)
 ![Terraform](https://img.shields.io/badge/Terraform-IaC-blue)
