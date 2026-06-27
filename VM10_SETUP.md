@@ -174,7 +174,6 @@ ssh-keygen -t rsa -b 4096 -f ~/.ssh/labredes_key -N ""
 
 `-N ""`: Define a ausência (string vazia) de uma frase-senha secundária para a chave privada. Isso é mandatório para que ferramentas de automação como o Ansible consigam ler a chave e realizar conexões em lote sem exigir interrupção humana.
 
-Confirmação da criação da chave pública:
 ```
 openstack keypair create --public-key ~/.ssh/labredes_key.pub labredes_key
 ```
