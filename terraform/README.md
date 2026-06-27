@@ -42,3 +42,34 @@ provider "openstack" {
     "identity" = "[http://10.10.2.9:5000/v3/](http://10.10.2.9:5000/v3/)"
   }
 }
+```
+---
+
+## 3. Mapeamento de Recursos (`variables.tf`)
+
+Para evitar repetição de código, as características das instâncias foram mapeadas em um dicionário de variáveis. O Terraform lê este mapeamento e provisiona as máquinas em lote.
+
+```
+variable "vms_projeto" {
+  description = "Mapeamento das VMs com Rede de Gerencia (OOBM)"
+  type = map(object({
+    nome        = string
+    rede        = string
+    rede_extra  = string
+    flavor_name = string
+  }))
+  default = {
+    "vm1_central" = { 
+      nome = "VM1", rede = "labredes1", rede_extra = "VLAN20_SERVER", flavor_name = "minor.pico.large" 
+    },
+    "vm9_autenticacao" = { 
+      nome = "VM9", rede = "labredes1", rede_extra = "VLAN10_AUTENTICACAO", flavor_name = "minor.pico.large" 
+    },
+    "vm_sw1" = { 
+      nome = "VM_SW1", rede = "labredes1", rede_extra = "TRUNK_INTER_SW", flavor_name = "minor.pico.large" 
+    }
+    # Demais instâncias omitidas para brevidade neste exemplo
+  }
+}
+```
+---
