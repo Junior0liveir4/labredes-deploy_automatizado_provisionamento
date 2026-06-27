@@ -106,6 +106,8 @@ sudo usermod -aG docker $USER
 
 ## ☁️ 4. Instalação do OpenStack Client (Interface de Linha de Comando da Nuvem)
 
+![OpenStack](images/openstack.png)
+
 Esta ferramenta abstrai as requisições HTTP/REST, permitindo consultar IDs de rede, listar instâncias e inserir chaves SSH na nuvem via linha de comando.
 ```
 apt install -y python3-pip python3-dev
