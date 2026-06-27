@@ -82,8 +82,8 @@ apt update && apt upgrade -y
 `apt upgrade -y`: Compara as versões dos softwares instalados localmente com a lista de metadados atualizada. Realiza o download e a substituição dos binários desatualizados.
 
 `-y`: suprime os prompts de confirmação, aprovando automaticamente as substituições.
-
-### 2.1. Docker (Motor de Contêineres)
+---
+## 🐳 3. Instalação do Docker (Motor de Contêineres)
 
 O Docker é necessário para criar, isolar e executar serviços empacotados em ambientes controlados.
 ```
@@ -100,7 +100,7 @@ sudo usermod -aG docker $USER
 
 ---
 
-## 🛠 3. Instalação do OpenStack Client (Interface de Linha de Comando da Nuvem)
+## ☁️ 4. Instalação do OpenStack Client (Interface de Linha de Comando da Nuvem)
 
 Esta ferramenta abstrai as requisições HTTP/REST, permitindo consultar IDs de rede, listar instâncias e inserir chaves SSH na nuvem via linha de comando.
 ```
@@ -111,7 +111,7 @@ apt install -y python3-openstackclient
 
 ---
 
-## 🪪 4. Autenticação com a Nuvem OpenStack
+## 🪪 5. Autenticação com a Nuvem OpenStack
 
 Para que o Terraform e o CLI do OpenStack obtenham autorização para provisionar recursos, as credenciais da API foram centralizadas em um arquivo estruturado de configuração.
 
@@ -157,7 +157,7 @@ export OS_CLOUD=labredes
 
 ---
 
-## 🔐 5. Geração e Registro de Chaves Criptográficas (SSH)
+## 🔐 6. Geração e Registro de Chaves Criptográficas (SSH)
 
 Para garantir acesso de gerência às máquinas virtuais criadas sem a necessidade de inserção manual de senhas, um par de chaves de acesso seguro (SSH) foi gerado na VM10 e registrado na nuvem.
 ```
@@ -189,8 +189,6 @@ openstack keypair list
 ## 💡 Comandos Úteis do OpenStack Client
 
 **🛠 Comandos de Identidade e Autenticação**
-* `openstack token issue`: Solicita e exibe o token de autenticação temporário atual.
-
 * `openstack service list`: Lista todos os serviços registrados no catálogo do Keystone (Identidade).
 
 * `openstack endpoint list`: Exibe as URLs de serviço (endpoints) onde as APIs de computação, rede e volumes estão respondendo.
