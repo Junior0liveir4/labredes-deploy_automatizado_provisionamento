@@ -1,12 +1,12 @@
-# Plataforma Distribuída de Monitoramento e Segurança de Redes
-**Módulo de Orquestração e Deploy Automatizado (VM10)**
-
-Projeto desenvolvido para a disciplina de Laboratório de Redes. 
+👨‍💻 # Plataforma Distribuída de Monitoramento e Segurança de Redes
+🚀 **Módulo de Orquestração e Deploy Automatizado (VM10)**
 
 ![Ansible](https://img.shields.io/badge/Ansible-Automacao-red)
 ![Terraform](https://img.shields.io/badge/Terraform-IaC-blue)
 ![Docker](https://img.shields.io/badge/Docker-Container-blue)
 ![Python](https://img.shields.io/badge/Python-3.12-yellow)
+
+Projeto desenvolvido para a disciplina de Laboratório de Redes. 
 
 Este repositório contém o memorial de execução de Infraestrutura como Código (IaC) e Gerência de Configuração responsáveis pelo provisionamento, estruturação de redes e implantação de serviços de uma plataforma distribuída operando em ambiente de nuvem OpenStack.
 
