@@ -219,8 +219,15 @@ Função do comando: `ssh-keygen`: Invoca o gerador de chaves criptográficas do
 `-f ~/.ssh/labredes_key`: Especifica o caminho de destino e o nome dos arquivos gerados (a chave privada labredes_key e a pública labredes_key.pub).
 
 `-N ""`: Define a ausência (string vazia) de uma frase-senha secundária para a chave privada. Isso é mandatório para que ferramentas de automação como o Ansible consigam ler a chave e realizar conexões em lote sem exigir interrupção humana.
+
+Confirmação da criação da chave pública:
 ```
 openstack keypair create --public-key ~/.ssh/labredes_key.pub labredes_key
 ```
 
 Função do comando: O utilitário do OpenStack lê o conteúdo em texto plano do arquivo da chave pública (`.pub`) e realiza uma requisição POST à API de Computação (Nova) da nuvem. O OpenStack armazena essa chave pública em seu banco de dados sob o identificador lógico `labredes_key`. Durante o provisionamento das novas instâncias pelo Terraform, a nuvem injeta o conteúdo desta chave pública dentro do sistema operacional das novas VMs, autorizando conexões oriundas exclusivamente de quem possuir a chave privada (A VM10).
+
+Confirmação da criação da chave pública:
+```
+openstack keypair list
+```
