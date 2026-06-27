@@ -176,7 +176,7 @@ Insira o dicionário de autenticação:
 clouds:
   labredes:
     auth:
-      auth_url: [http://10.10.2.9:5000/v3/](http://10.10.2.9:5000/v3/)
+      auth_url: http://10.10.2.9:5000/v3/
       username: "aluno6"
       password: "aluno6"
       project_id: "90f1c80288444ed4bb4e41b5aa2d003f"
@@ -186,10 +186,10 @@ clouds:
     region_name: "RegionOne"
     interface: "public"
     identity_api_version: 3
-    compute_endpoint_override: "[http://10.10.2.9:8774/v2.1/90f1c80288444ed4bb4e41b5aa2d003f](http://10.10.2.9:8774/v2.1/90f1c80288444ed4bb4e41b5aa2d003f)"
-    image_endpoint_override: "[http://10.10.2.9:9292](http://10.10.2.9:9292)"
-    network_endpoint_override: "[http://10.10.2.9:9696](http://10.10.2.9:9696)"
-    volume_endpoint_override: "[http://10.10.2.9:8776](http://10.10.2.9:8776)"
+    compute_endpoint_override: "http://10.10.2.9:8774/v2.1/90f1c80288444ed4bb4e41b5aa2d003f"
+    image_endpoint_override: "http://10.10.2.9:9292"
+    network_endpoint_override: "http://10.10.2.9:9696"
+    volume_endpoint_override: "http://10.10.2.9:8776"
 ```
 
 Estrutura do arquivo: Este arquivo em formato YAML armazena as credenciais de autenticação (usuário, senha, IDs de projeto). As chaves terminadas em `_endpoint_override` instruem explicitamente as ferramentas a enviarem as requisições REST para URLs estáticas (Nova, Glance, Neutron e Cinder), otimizando a comunicação e prevenindo falhas no serviço de descoberta (discovery) do OpenStack.
