@@ -18,6 +18,8 @@ Antes de executar as tarefas, configuramos o comportamento do Ansible para o amb
 
 Preparar o ambiente do Ansible:
 ```
+mkdir ~/ansible
+mkdir ~/ansible/labredes
 nano ~/ansible/labredes/ansible.cfg
 ```
 ```ini
@@ -35,6 +37,7 @@ inventory = hosts.ini
 
 Usando o modelo do arquivo de criação de VM feito anteriormente no tutorial de instalação do Terraform, execute o comando abaixo para criar a vm-teste:
 ```
+cd ~/terraform/labredes/
 terraform plan
 terraform apply -auto-approve
 ```
@@ -44,7 +47,7 @@ nano ~/ansible/labredes/instalar_ovs.yml
 ```
 ```
 - name: Instalar e Configurar o Open vSwitch
-  hosts: vm-teste
+  hosts: teste
   become: yes
   gather_facts: no
   
@@ -77,6 +80,7 @@ nano ~/ansible/labredes/instalar_ovs.yml
 ```
 Executar a automação:
 ```
+cd ~/ansible/labredes/
 ansible-playbook instalar_ovs.yml
 ```
 Para confirmar que o teste foi bem-sucedido, conecte-se à instância e verifique o serviço com o comando:
