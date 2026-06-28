@@ -38,7 +38,6 @@ Abra o arquivo de configuração:
 ```
 nano /etc/netplan/99-cloud-init.yaml
 ```
-
 Insira a seguinte estrutura de dados:
 ```
 network:
@@ -60,13 +59,13 @@ network:
       set-name: "ens7"
       mtu: 1450
 ```
-
-
 Aplique as configurações:
 ```
+chmod 600 /etc/netplan/99-cloud-init.yaml
 netplan apply
 ```
-**Função do comando:** O utilitário lê a estrutura de dados declarada no arquivo YAML, compila as informações e aplica o estado desejado ao renderizador de rede do sistema (neste caso, o systemd-networkd). Isso regrava as tabelas de roteamento e endereçamento de forma definitiva no disco.
+**Função do comando:** `chmod 600`: Define as permissões do arquivo como `rw-------`. Isso garante que o proprietário (`root`) tenha permissão de leitura e escrita, enquanto qualquer outro usuário ou grupo do sistema não possui nenhuma permissão de acesso ao arquivo.
+O utilitário lê a estrutura de dados declarada no arquivo YAML, compila as informações e aplica o estado desejado ao renderizador de rede do sistema (neste caso, o systemd-networkd). Isso regrava as tabelas de roteamento e endereçamento de forma definitiva no disco.
 
 ---
 
