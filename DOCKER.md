@@ -18,6 +18,7 @@ sudo usermod -aG docker $USER
 ---
 ## 1. Validação do Ambiente de Execução
 Após a instalação, é necessário validar se o serviço está íntegro e se as permissões de usuário estão corretas.
+
 Teste de Versionamento:
 ```
 docker --version
