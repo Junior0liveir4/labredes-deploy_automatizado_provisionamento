@@ -1,4 +1,4 @@
-# 🐳 Instalação do Docker (Motor de Contêineres)
+# 🐳 Motor de Contêineres (DOCKER)
 
 ![Docker](images/docker.png)
 
