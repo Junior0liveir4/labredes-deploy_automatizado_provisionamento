@@ -4,7 +4,7 @@
 
 O Docker é necessário para criar, isolar e executar serviços empacotados em ambientes controlados.
 ```
-curl -fsSL [https://get.docker.com](https://get.docker.com) | sudo sh
+curl -fsSL https://get.docker.com | sudo sh
 ```
 
 **Função do comando:** `curl`: faz o download do script oficial de instalação automatizada do Docker;
