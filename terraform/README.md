@@ -127,3 +127,8 @@ Para apagar a instância execute:
 ```
 terraform destroy -auto-approve
 ```
+---
+
+## 💡 Comandos Úteis do Terraform
+
+`terraform show`: Exibe o estado atual da sua infraestrutura provisionada a partir do arquivo `.tfstate`. Ele mostra os atributos detalhados de cada recurso (ex: o ID da VM, o IP atribuído, a rede vinculada), servindo como uma forma de consultar o que está rodando na nuvem sem precisar abrir o Dashboard do OpenStack.
