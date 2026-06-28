@@ -1,4 +1,4 @@
-# 🧊 Provisionamento de Infraestrutura (Terraform)
+# 🧊 Provisionamento de Infraestrutura (TERRAFORM)
 
 ![Terraform](../images/terraform.png)
 
